@@ -16,12 +16,13 @@ namespace KeygenDLLGui
             this.textBox1.TextAlign = HorizontalAlignment.Center;
             this.textBox2.TextAlign = HorizontalAlignment.Center;
             this.ControlBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
                 KeygenDLL.Class1 Code = new KeygenDLL.Class1();
-                textBox2.Text = Code.mIRC(textBox1.Text);
+                textBox2.Text = Code.Keygen2(textBox1.Text);
         }
 
         #region About
