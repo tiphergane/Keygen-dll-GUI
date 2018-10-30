@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Reflection;
+using System.Data;
 
 namespace KeygenDLLGui
 {
@@ -8,6 +10,7 @@ namespace KeygenDLLGui
         public Form1()
         {
             InitializeComponent();
+            #region Configuration GUI
             this.Text = "Keygen";
             this.button1.Text = "&Générer";
             this.button2.Text = "&About";
@@ -17,13 +20,26 @@ namespace KeygenDLLGui
             this.textBox2.TextAlign = HorizontalAlignment.Center;
             this.ControlBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.groupBox1.Text = "Choisissez votre générateur dans la liste";
+            KeygenDLL.Class1 Source = new KeygenDLL.Class1();
+            this.comboBox1.DataSource = Source.Data();
+            this.comboBox1.SelectedText = "keygen1";
+            this.comboBox1.Refresh();
+            #endregion
         }
 
+        /// <summary>
+        /// Pour envoyer les informations de la GUI vers la DLL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-                KeygenDLL.Class1 Code = new KeygenDLL.Class1();
-                textBox2.Text = Code.Keygen2(textBox1.Text);
+            KeygenDLL.Class1 Code = new KeygenDLL.Class1();
+            textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
         }
+
+
 
         #region About
         private void button2_Click(object sender, EventArgs e)
@@ -37,5 +53,6 @@ namespace KeygenDLLGui
             this.Close();
         }
         #endregion
+
     }
 }
