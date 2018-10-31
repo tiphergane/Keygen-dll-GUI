@@ -1,7 +1,5 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
-using System.Reflection;
-using System.Data;
 
 namespace KeygenDLLGui
 {
@@ -28,18 +26,39 @@ namespace KeygenDLLGui
             #endregion
         }
 
+        #region Générer
         /// <summary>
         /// Pour envoyer les informations de la GUI vers la DLL
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
+        {            
+            KeygenDLL.Class1 Code = new KeygenDLL.Class1();
+            textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
+        }
+        /// <summary>
+        /// Pour envoyer les informations de la GUI vers la DLL quand on change le nom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             KeygenDLL.Class1 Code = new KeygenDLL.Class1();
             textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
         }
 
-
+        /// <summary>
+        /// Pour envoyer les informations de la GUI vers la DLL quand on change le Keygen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KeygenDLL.Class1 Code = new KeygenDLL.Class1();
+            textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
+        }
+        #endregion
 
         #region About
         private void button2_Click(object sender, EventArgs e)
@@ -47,6 +66,7 @@ namespace KeygenDLLGui
             MessageBox.Show("Keygen for:\tMultiple Application DLL based\r" + Environment.NewLine + "Protection:\tAll depend the Application\r" + Environment.NewLine + "greetz fly to:\tRax| Haiklr et tout les autres\r", "About meoow");
         }
         #endregion
+
         #region Quitter
         private void button3_Click(object sender, EventArgs e)
         {
@@ -54,5 +74,6 @@ namespace KeygenDLLGui
         }
         #endregion
 
+ 
     }
 }
