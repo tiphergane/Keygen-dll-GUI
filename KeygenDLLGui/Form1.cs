@@ -9,7 +9,6 @@ namespace KeygenDLLGui
         {
             InitializeComponent();
             #region Configuration GUI
-            this.Text = "Keygen";
             this.button1.Text = "&Générer";
             this.button2.Text = "&About";
             this.button3.Text = "&Quitter";
@@ -23,6 +22,7 @@ namespace KeygenDLLGui
             this.comboBox1.DataSource = Source.Data();
             this.comboBox1.SelectedText = "keygen1";
             this.comboBox1.Refresh();
+            this.Text = "Keygen";
             #endregion
         }
 
@@ -33,9 +33,8 @@ namespace KeygenDLLGui
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
-        {            
-            KeygenDLL.Class1 Code = new KeygenDLL.Class1();
-            textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
+        {
+            GetKey();
         }
         /// <summary>
         /// Pour envoyer les informations de la GUI vers la DLL quand on change le nom
@@ -44,8 +43,7 @@ namespace KeygenDLLGui
         /// <param name="e"></param>
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            KeygenDLL.Class1 Code = new KeygenDLL.Class1();
-            textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
+            GetKey();
         }
 
         /// <summary>
@@ -55,25 +53,32 @@ namespace KeygenDLLGui
         /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            KeygenDLL.Class1 Code = new KeygenDLL.Class1();
-            textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
+            GetKey();
         }
+
         #endregion
 
         #region About
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Keygen for:\tMultiple Application DLL based\r" + Environment.NewLine + "Protection:\tAll depend the Application\r" + Environment.NewLine + "greetz fly to:\tRax| Haiklr et tout les autres\r", "About meoow");
+            string Nombre = this.comboBox1.Items.Count.ToString();
+            MessageBox.Show("Keygen for:\t" + Nombre +" Application DLL based\r" + Environment.NewLine + "Protection:\tAll depend the Application\r" + Environment.NewLine + "greetz fly to:\tRax| Haiklr et tout les autres\r", "About meoow");
         }
         #endregion
+
+       private void GetKey()
+        {
+            KeygenDLL.Class1 Code = new KeygenDLL.Class1();
+            textBox2.Text = Code.Choix(comboBox1.Text, textBox1.Text);
+        }
 
         #region Quitter
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        #endregion
 
- 
+
+        #endregion
     }
 }
