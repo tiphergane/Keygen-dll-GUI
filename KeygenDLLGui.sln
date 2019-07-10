@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeygenDLLGui", "KeygenDLLGui\KeygenDLLGui.csproj", "{AE444CF6-B198-4B83-AC77-418AFD425A4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeygenDLL", "..\KeygenDLL\KeygenDLL\KeygenDLL.csproj", "{CF75B3D0-64BB-47BE-81F7-5D9F505161CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE444CF6-B198-4B83-AC77-418AFD425A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE444CF6-B198-4B83-AC77-418AFD425A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE444CF6-B198-4B83-AC77-418AFD425A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF75B3D0-64BB-47BE-81F7-5D9F505161CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF75B3D0-64BB-47BE-81F7-5D9F505161CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF75B3D0-64BB-47BE-81F7-5D9F505161CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF75B3D0-64BB-47BE-81F7-5D9F505161CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

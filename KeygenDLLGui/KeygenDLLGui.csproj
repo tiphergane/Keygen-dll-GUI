@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KeygenDLL">
-      <HintPath>..\..\KeygenDLL\KeygenDLL\bin\Debug\KeygenDLL.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -81,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KeygenDLL\KeygenDLL\KeygenDLL.csproj">
+      <Project>{cf75b3d0-64bb-47be-81f7-5d9f505161cc}</Project>
+      <Name>KeygenDLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
