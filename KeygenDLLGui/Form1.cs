@@ -62,7 +62,7 @@ namespace KeygenDLLGui
         private void button2_Click(object sender, EventArgs e)
         {
             string Nombre = this.comboBox1.Items.Count.ToString();
-            MessageBox.Show("Keygen for:\t" + Nombre +" Application DLL based\r" + Environment.NewLine + "Protection:\tAll depend the Application\r" + Environment.NewLine + "greetz fly to:\tRax| Haiklr et tout les autres\r", "About meoow");
+            MessageBox.Show("Keygen for:\t" + Nombre +" Application DLL based\r" + Environment.NewLine + "Protection:\tAll depend the Application\r" + Environment.NewLine + "greetz fly to:\tRax| Haiklr et tous les autres\r", "About meoow");
         }
         #endregion
 
